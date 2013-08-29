@@ -3,5 +3,5 @@
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+network = Network.create({ name: 'Github' })
 #   Mayor.create(name: 'Emanuel', city: cities.first)

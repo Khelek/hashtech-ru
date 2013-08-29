@@ -1,4 +1,15 @@
 HashteshRu::Application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  root :to => "admin#panel"
+  get "admins/login"
+
+  get "admins/logout"
+
+  get "admins/panel"
+
+  get "users/new"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
