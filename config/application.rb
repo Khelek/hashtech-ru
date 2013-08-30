@@ -6,7 +6,7 @@ if defined?(Bundler)
   Bundler.require(*Rails.groups(:assets => %w(development test)))
 end
 
-module HashteshRu
+module HashtechRu
   class Application < Rails::Application
     config.encoding = "utf-8"
     config.filter_parameters += [:password]

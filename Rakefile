@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-HashteshRu::Application.load_tasks
+HashtechRu::Application.load_tasks
