@@ -1,5 +1,6 @@
 ActiveAdmin.register Network do
   index do
+    selectable_column
     column :name
     column :logo do |obj|
       image_tag obj.logo_url(:tiny)

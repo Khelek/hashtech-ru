@@ -10,6 +10,16 @@ ActiveAdmin.register_page "Dashboard" do
       end
     end
 
+    section "Recent Products" do
+      table_for Partner.order("created_at").limit(5) do
+        column :name
+        column :description
+        column :logo do |partner|
+          image_tag partner.logo_url(:small)
+        end
+      end
+      strong { link_to "View All Partners", admin_partners_path }
+    end
     # Here is an example of a simple dashboard with columns and panels.
     #
     # columns do

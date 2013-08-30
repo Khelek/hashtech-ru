@@ -1,15 +1,19 @@
 ActiveAdmin.register Partner do
   index do
+    selectable_column
     column :name
     column :site do |partner|
       link_to partner.site, partner.site 
     end
     column :description
     column "Links" do |partner|
-        partner.links.map do |l|
-        span link_to image_tag(l.network.logo_url(:tiny),
-                               alt: l.network.name), l.value
+      partner.links.map do |l|
+        if l.network
+          span link_to image_tag(l.network.logo_url(:tiny), alt: l.network.name), l.value
+        else
+          span link_to l.value, l.value
         end
+      end
     end
     column :logo do |partner|
       image_tag partner.logo_url(:small)
