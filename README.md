@@ -1,7 +1,7 @@
-hashtesh.ru
+hashtech.ru
 ===========
 
-публичный сайт компании hashtesh
+публичный сайт компании hashtech
 
 To run type the following command:
 ```
