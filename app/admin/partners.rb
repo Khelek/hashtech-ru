@@ -15,6 +15,11 @@ ActiveAdmin.register Partner do
         end
       end
     end
+    column "Projects" do |partner|
+      partner.projects.map do |project|
+        span link_to project.name, admin_project_path(project)
+      end
+    end
     column :logo do |partner|
       image_tag partner.logo_url(:small)
     end

@@ -3,6 +3,7 @@ class Partner < ActiveRecord::Base
   attr_accessible :links_attributes
   
   has_many :links, dependent: :destroy
+  has_many :projects
   accepts_nested_attributes_for :links
   
   mount_uploader :logo, ImageUploader
