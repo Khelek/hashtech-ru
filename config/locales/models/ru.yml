@@ -1,0 +1,44 @@
+ru:
+  activerecord:
+    models:
+      network:
+        one: Сеть
+        other: Сети
+      link:
+        one: Ссылка
+        other: Ссылки
+      partner:
+        one: Партнер
+        other: Партнеры
+      project:
+        one: Проект
+        other: Проекты
+      admin_user:
+        one: Администратор
+        other: Администраторы
+    attributes:
+      network:
+        logo: Логотип
+        remote_logo_url: Удаленный адрес логотипа
+        name: Название
+      link:
+        partner: Партнёр
+        network: Сеть
+        value: Значение
+      partner:
+        description: Описание
+        logo: Логотип
+        name: Название
+        site: Сайт
+        links: Ссылки
+        projects: Проекты
+      project:
+        name: Название
+        completed: Завершен
+        completed_yes: Да
+        completed_no: Нет
+        description: Описание
+        partner: Партнер
+        repository: Репозиторий
+        site: Сайт
+        
