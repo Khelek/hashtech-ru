@@ -6,7 +6,7 @@ ActiveAdmin.register Partner do
       link_to partner.site, partner.site 
     end
     column :description
-    column "Links" do |partner|
+    column I18n.t 'activerecord.attributes.partner.links' do |partner|
       partner.links.map do |l|
         if l.network
           span link_to image_tag(l.network.logo_url(:tiny), alt: l.network.name), l.value
@@ -15,7 +15,7 @@ ActiveAdmin.register Partner do
         end
       end
     end
-    column "Projects" do |partner|
+    column I18n.t 'activerecord.attributes.partner.projects' do |partner|
       partner.projects.map do |project|
         span link_to project.name, admin_project_path(project)
       end

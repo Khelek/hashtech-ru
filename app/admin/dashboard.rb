@@ -12,9 +12,9 @@ ActiveAdmin.register_page "Dashboard" do
 
     section "Recent Products" do
       table_for Partner.order("created_at").limit(5) do
-        column :name
-        column :description
-        column :logo do |partner|
+        column I18n.t('activerecord.attributes.partner.name'), :name
+        column I18n.t('activerecord.attributes.partner.description'), :description
+        column I18n.t('activerecord.attributes.partner.logo'), :logo do |partner|
           image_tag partner.logo_url(:small)
         end
       end
