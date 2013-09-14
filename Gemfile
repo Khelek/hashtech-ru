@@ -42,6 +42,7 @@ gem 'capistrano_colors'
 group :test do
   gem 'simplecov', require: false
   gem 'minitest'
+  gem "mocha", :require => false
   gem 'factory_girl_rails', require: false
   gem 'turn'
   gem 'tconsole'

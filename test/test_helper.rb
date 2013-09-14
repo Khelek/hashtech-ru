@@ -1,6 +1,14 @@
 ENV["RAILS_ENV"] = "test"
+
+require 'simplecov'
+SimpleCov.start
+
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
+
+require "mocha/setup"
+require 'factory_girl'
+FactoryGirl.reload
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
@@ -8,6 +16,7 @@ class ActiveSupport::TestCase
   # Note: You'll currently still have to declare fixtures explicitly in integration tests
   # -- they do not yet inherit this setting
   fixtures :all
-
+  include Devise::TestHelpers
+  include FactoryGirl::Syntax::Methods
   # Add more helper methods to be used by all tests here...
 end

@@ -10,7 +10,7 @@ ActiveAdmin.register_page "Dashboard" do
       end
     end
 
-    section "Recent Products" do
+    section I18n.t('activerecord.models.partner.other') do
       table_for Partner.order("created_at").limit(5) do
         column I18n.t('activerecord.attributes.partner.name'), :name
         column I18n.t('activerecord.attributes.partner.description'), :description
@@ -18,7 +18,7 @@ ActiveAdmin.register_page "Dashboard" do
           image_tag partner.logo_url(:small)
         end
       end
-      strong { link_to "View All Partners", admin_partners_path }
+      strong { link_to I18n.t('activeadmin.view_all_partners'), admin_partners_path }
     end
     # Here is an example of a simple dashboard with columns and panels.
     #
