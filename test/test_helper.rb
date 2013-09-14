@@ -10,6 +10,9 @@ require "mocha/setup"
 require 'factory_girl'
 FactoryGirl.reload
 
+require 'coveralls'
+Coveralls.wear!
+
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
   #
