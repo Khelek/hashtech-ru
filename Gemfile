@@ -53,6 +53,7 @@ end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'syntax_fix', '0.0.3'
 end
 
 group :production do

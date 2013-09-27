@@ -17,15 +17,15 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :thumb do
-    process :resize_to_limit => [200, 200]
+    process resize_to_limit: [200, 200]
   end
 
   version :small do
-    process :resize_to_limit => [100, 100]
+    process resize_to_limit: [100, 100]
   end
 
   version :tiny do
-    process :resize_to_limit => [40, 40]
+    process resize_to_limit: [40, 40]
   end
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
@@ -36,7 +36,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  # process :scale => [200, 300]
+  # process scale: [200, 300]
   #
   # def scale(width, height)
   #   # do something
@@ -44,7 +44,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   # version :thumb do
-  #   process :scale => [50, 50]
+  #   process scale: [50, 50]
   # end
 
   # Add a white list of extensions which are allowed to be uploaded.
