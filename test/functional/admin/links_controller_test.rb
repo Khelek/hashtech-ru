@@ -1,9 +1,9 @@
 require 'test_helper'
 
-class AdminNetworksControllerTest < ActionController::TestCase
+class Admin::LinksControllerTest < ActionController::TestCase
   setup do
     # Creates a reference to the admin controller
-    @controller = ::Admin::NetworksController.new 
+    @controller = ::Admin::LinksController.new 
 
     # Prevents checking for a valid user session (pretends we're logged in)
     @controller.stubs(:authenticate_active_admin_user)
