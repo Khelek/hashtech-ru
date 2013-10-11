@@ -1,7 +1,12 @@
+if ENV["TRAVIS"]
+  require 'coveralls'
+  Coveralls.wear!
+end
+
 ENV["RAILS_ENV"] = "test"
 
 require 'simplecov'
-SimpleCov.start
+SimpleCov.start 
 
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
@@ -9,9 +14,6 @@ require 'rails/test_help'
 require "mocha/setup"
 require 'factory_girl'
 FactoryGirl.reload
-
-require 'coveralls'
-Coveralls.wear!
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
