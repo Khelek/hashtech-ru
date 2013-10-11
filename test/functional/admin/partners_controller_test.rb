@@ -1,9 +1,9 @@
 require 'test_helper'
 
-class AdminProjectsControllerTest < ActionController::TestCase
+class Admin::PartnersControllerTest < ActionController::TestCase
   setup do
     # Creates a reference to the admin controller
-    @controller = ::Admin::ProjectsController.new 
+    @controller = ::Admin::PartnersController.new 
 
     # Prevents checking for a valid user session (pretends we're logged in)
     @controller.stubs(:authenticate_active_admin_user)
@@ -13,7 +13,7 @@ class AdminProjectsControllerTest < ActionController::TestCase
     get :index
     assert_response :success
     assert_template :index
-    #assert_template layout: "admin/projects/_index"
+    #assert_template render_template(partial: "admin/partners/_index")
   end
 
   test "should get new" do 
