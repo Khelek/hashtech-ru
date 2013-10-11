@@ -1,2 +1,32 @@
-%h1 Projects#index
-%p Find me in app/views/projects/index.html.haml
+.span12
+  .row
+    - if @projects
+      %a{ href: projects_index_path }
+        %h3= t('projects')
+      %table.table.table-striped
+        %thead
+          %tr.table-aligned
+            %th
+              %p.text-center.text-info= t('name')
+            %th
+              %p.text-center.text-info= t('completed')
+            %th
+              %p.text-center.text-info= t('site')
+            %th
+              %p.text-center.text-info= t('repository')
+            %th
+              %p.text-center.text-info= t('description')
+        - @projects.each do |project|
+          %tr.table-aligned
+            %th
+              %p.text-center= project.name
+            %th
+              %p.text-center= project.completed
+            %th
+              %a{ href: project.site }
+                %p.text-center= project.site
+            %th
+              %p.text-center= project.repository
+            %th
+              %p.text-center= project.description
+      %hr
