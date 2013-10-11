@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class LinksControllerTest < ActionController::TestCase
+class AdminLinksControllerTest < ActionController::TestCase
   setup do
     # Creates a reference to the admin controller
     @controller = ::Admin::LinksController.new 
