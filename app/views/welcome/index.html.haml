@@ -6,12 +6,10 @@
       %a{ href: projects_index_path }
         %h3= t('projects')
       .fotorama-wrap
-        .fotorama{ "data-transition" => "slide", "data-autoplay" => "true", "data-loop" => "true", "data-width" => "100%", "data-ratio" => "16/7", "data-fit" => "cover" }
+        .fotorama#fotorama-project{ "data-transition" => "slide", "data-autoplay" => "true", "data-loop" => "true", "data-width" => "100%", "data-ratio" => "16/7", "data-fit" => "cover" }
           - @projects.each do |project|
             %div
               %img{src: project.screenshots.last.image.url}
-                hst
-              %img.pull-right{scr: project.partner.logo_url(:tiny)}
       %hr
   .row
     - if @partners
