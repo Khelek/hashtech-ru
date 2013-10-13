@@ -1,29 +1,32 @@
-.span5
+= javascript_include_tag  "jquery.rs.slideshow.js"
+= stylesheet_link_tag     "style"
+.span12
   .row
     - if @projects
       %a{ href: projects_index_path }
         %h3= t('projects')
-      %table.table.table-striped
-        %thead
-          %tr.table-aligned
-            %th
-              %p.text-center.text-info= t('name')
-            %th
-              %p.text-center.text-info= t('site')
-            %th
-              %p.text-center.text-info= t('completed')
-        - @projects.each do |project|
-          %tr.table-aligned
-            %th
-              %p.text-center= project.name
-            %th
-              %a{ href: project.site }
-                %p.text-center= project.site
-            %th
-              %p.text-center= project.completed
-      %a.btn.btn-info{ href: projects_index_path }= t('.all_projects')
+      #projects-slideshow-container
+        %a.btn.btn-info.pull-left#rs-prev( href="#" data-control-for="projects-slideshow" )
+          <
+        %a.btn.btn-info.pull-right#rs-next( href="#" data-control-for="projects-slideshow" )
+          >
+        #projects-slideshow
+          .slide-container
+            %img{src: @projects.first.screenshots.last.image.url, alt: "at", title: @projects.first.name }
+            .slide-caption
+              project_name:
+              = @projects.first.name
+              %img.pull-right{ src: (@projects.first.partner.logo_url(:tiny) if @projects.first.partner), alt: @projects.first.partner.name }
+          %ol.slides
+            - @projects.drop(1).each do |project|
+              %li
+                %a{href: project.screenshots.last.image.url, title: project}
+                .caption
+                  TODO заменить img на ссылку
+                  project_name:
+                  = project.name
+                  %img.pull-right{ src: (project.partner.logo_url(:tiny) if project.partner), alt: project.partner.name }
       %hr
-.span6.offset1
   .row
     - if @partners
       %a{ href: partners_index_path }
