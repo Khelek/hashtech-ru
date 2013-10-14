@@ -22,6 +22,8 @@ gem 'draper', '~> 1.0.0'
 gem 'enumerize'
 gem 'jquery-rails'
 
+gem "fotoramajs"
+
 gem 'activeadmin'
 gem 'jquery-ui-rails'
 
