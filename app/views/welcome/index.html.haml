@@ -1,4 +1,4 @@
-= javascript_include_tag  "jquery-1.10.1.min.js"
+= javascript_include_tag  "welcome"
 = stylesheet_link_tag  "welcome"
 .span12
   .row
@@ -6,10 +6,10 @@
       %a{ href: projects_index_path }
         %h3= t('projects')
       .fotorama-wrap
-        .fotorama#fotorama-project{ "data-transition" => "slide", "data-autoplay" => "true", "data-loop" => "true", "data-width" => "100%", "data-ratio" => "16/7", "data-fit" => "cover" }
+        .fotorama{ "data-transition" => "slide", "data-autoplay" => "false", "data-loop" => "true", "data-width" => "100%", "data-ratio" => "16/7", "data-fit" => "cover" }
           - @projects.each do |project|
-            %div
-              %img{src: project.screenshots.last.image.url}
+            .caption{"data-img" => project.screenshots.last.image.url}
+              %img{src: project.partner.logo_url(:small)}
       %hr
   .row
     - if @partners
