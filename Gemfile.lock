@@ -295,6 +295,7 @@ DEPENDENCIES
   fotoramajs
   haml
   haml-rails
+  jquery-rails
   jquery-ui-rails
   less-rails
   mini_magick
