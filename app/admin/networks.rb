@@ -15,6 +15,6 @@ ActiveAdmin.register Network do
       f.input :remote_logo_url
     end
     
-    f.buttons
+    f.actions
   end
 end

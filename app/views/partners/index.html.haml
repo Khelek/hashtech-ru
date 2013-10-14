@@ -1,0 +1,29 @@
+.span12
+  .row
+    - if @partners
+      %a{ href: partners_index_path }
+        %h3= t('partners')
+      %table.table.table-striped
+        %thead
+          %tr.table-aligned
+            %th
+              %p.text-center.text-info= t('name')
+            %th
+              %p.text-center.text-info= t('site')
+            %th
+              %p.text-center.text-info= t('description')
+            %th
+              %p.text-center.text-info= t('logo')
+        - @partners.each do |partner|
+          %tr.table-aligned
+            %th
+              %p.text-center= partner.name
+            %th
+              %a{ href: partner.site }
+                %p.text-center= partner.site
+            %th
+              %p.text-center= partner.description
+            %th
+              %p.text-center
+                %img.img-rounded.micro{ src: partner.logo_url(:thumb) }
+      %hr
