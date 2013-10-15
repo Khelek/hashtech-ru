@@ -1,9 +1,7 @@
-= javascript_include_tag  "welcome"
-= stylesheet_link_tag  "welcome"
 .span12
   .row
     - if @projects
-      %a{ href: projects_index_path }
+      %a{ href: projects_path }
         %h3= t('projects')
       .fotorama-wrap
         .fotorama{ "data-transition" => "slide", "data-autoplay" => "false", "data-loop" => "true", "data-width" => "100%", "data-ratio" => "16/7", "data-fit" => "cover" }
@@ -13,7 +11,7 @@
       %hr
   .row
     - if @partners
-      %a{ href: partners_index_path }
+      %a{ href: partners_path }
         %h3= t('partners')
       %table.table.table-striped
         %thead
@@ -34,5 +32,8 @@
             %th
               %p.text-center
                 %img.img-rounded.micro{ src: partner.logo_url(:small) }
-      %a.btn.btn-info{ href: partners_index_path }= t('.all_partners')
+      %a.btn.btn-info{ href: partners_path }= t('.all_partners')
       %hr
+
+= javascript_include_tag  "welcome"
+= stylesheet_link_tag  "welcome"
