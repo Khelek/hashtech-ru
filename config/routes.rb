@@ -1,7 +1,7 @@
 HashtechRu::Application.routes.draw do
 
-  get "partners/index"
-  get "projects/index"
+  resources :partners, only: :index
+  resources :projects, only: :index
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
