@@ -1,5 +1,3 @@
-= javascript_include_tag  "welcome"
-= stylesheet_link_tag  "welcome"
 .span12
   .row
     - if @projects
@@ -36,3 +34,6 @@
                 %img.img-rounded.micro{ src: partner.logo_url(:small) }
       %a.btn.btn-info{ href: partners_path }= t('.all_partners')
       %hr
+
+= javascript_include_tag  "welcome"
+= stylesheet_link_tag  "welcome"
