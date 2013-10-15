@@ -1,5 +1,5 @@
 class Partner < ActiveRecord::Base
-  attr_accessible :description, :id, :logo, :name, :site
+  attr_accessible :description, :logo, :name, :site
   attr_accessible :links_attributes
   
   has_many :links, dependent: :destroy
