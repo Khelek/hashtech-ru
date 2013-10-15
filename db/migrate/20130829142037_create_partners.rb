@@ -1,7 +1,6 @@
 class CreatePartners < ActiveRecord::Migration
   def change
     create_table :partners do |t|
-      t.integer :id
       t.string :name
       t.string :site
       t.text :description
