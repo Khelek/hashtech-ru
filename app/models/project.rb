@@ -2,6 +2,9 @@ class Project < ActiveRecord::Base
   attr_accessible :description, :name, :partner_id, :repository, :site
   attr_accessible :screenshots_attributes
 
+  validates :name, presence: true
+  validates :repository, presence: true
+  
   state_machine :state, initial: :non_completed do
     state :non_completed
     state :completed
