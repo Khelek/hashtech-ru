@@ -27,6 +27,8 @@ gem "fotoramajs"
 gem 'activeadmin'
 gem 'jquery-ui-rails'
 
+gem 'state_machine'
+
 gem 'rename'
 
 group :assets do
