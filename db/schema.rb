@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(:version => 20131011125143) do
     t.string   "name"
     t.text     "description"
     t.integer  "partner_id"
-    t.boolean  "completed"
+    t.string   "state"
     t.string   "site"
     t.string   "repository"
     t.datetime "created_at",  :null => false

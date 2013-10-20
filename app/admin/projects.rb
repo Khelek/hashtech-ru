@@ -3,8 +3,8 @@ ActiveAdmin.register Project do
     selectable_column
     column :name
     column I18n.t 'activerecord.attributes.project.completed' do |project|
-      status_tag (project.completed ? I18n.t('activerecord.attributes.project.completed_yes')
-                  : I18n.t('activerecord.attributes.project.completed_no')), (project.completed ? :ok : :error)
+      status_tag (project.completed? ? I18n.t('activerecord.attributes.project.completed_yes')
+                  : I18n.t('activerecord.attributes.project.completed_no')), (project.completed? ? :ok : :error)
     end
     column :site do |project|
       link_to project.site, project.site 
@@ -25,7 +25,6 @@ ActiveAdmin.register Project do
     f.inputs "Details" do
       f.input :name
       f.input :partner
-      f.input :completed
       f.input :description
       f.input :repository
       f.input :site

@@ -4,7 +4,7 @@ class CreateProjects < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.integer :partner_id
-      t.boolean :completed
+      t.string :state
       t.string :site
       t.string :repository
 
