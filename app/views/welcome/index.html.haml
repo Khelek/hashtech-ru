@@ -3,37 +3,14 @@
     - if @projects
       %a{ href: projects_path }
         %h3= t('projects')
-      .fotorama-wrap
-        .fotorama{ "data-transition" => "slide", "data-autoplay" => "false", "data-loop" => "true", "data-width" => "100%", "data-ratio" => "16/7", "data-fit" => "cover" }
-          - @projects.each do |project|
-            .caption{"data-img" => (project.screenshots.last.image.url if project.screenshots.last)}
-              %img{src: (project.partner.logo_url(:small) if project.partner)}
+      = render partial: "projects/fotorama", locals: {projects: @projects}
       %hr
   .row
     - if @partners
       %a{ href: partners_path }
         %h3= t('partners')
-      %table.table.table-striped
-        %thead
-          %tr.table-aligned
-            %th
-              %p.text-center.text-info= t('name')
-            %th
-              %p.text-center.text-info= t('site')
-            %th
-              %p.text-center.text-info= t('logo')
-        - @partners.each do |partner|
-          %tr.table-aligned
-            %th
-              %p.text-center= partner.name
-            %th
-              %a{ href: partner.site }
-                %p.text-center= partner.site
-            %th
-              %p.text-center
-                %img.img-rounded.micro{ src: partner.logo_url(:small) }
+      = render partial: "partners/show", locals: {partners: @partners}
       %a.btn.btn-info{ href: partners_path }= t('.all_partners')
-      %hr
-
+  %hr
 = javascript_include_tag  "welcome"
 = stylesheet_link_tag  "welcome"

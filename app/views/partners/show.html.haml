@@ -1,0 +1,11 @@
+.page-header
+  %h1= @partner.name
+.row-fluid
+  .span7
+    %img.img-rounded{src: (@partner.logo_url(:thumb))}
+    %p{ align: "justify" }
+      = @partner.description
+    Site: 
+    = link_to @partner.site, @partner.site
+    %p
+      = link_to t('back'), partners_path, class: 'btn'

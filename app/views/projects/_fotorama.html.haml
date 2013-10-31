@@ -1,0 +1,5 @@
+.fotorama-wrap
+  .fotorama{ "data-transition" => "slide", "data-autoplay" => "false", "data-loop" => "true", "data-width" => "100%", "data-ratio" => "16/7", "data-fit" => "cover" }
+    - projects.each do |project|
+      .caption{"data-img" => (project.screenshots.last.image.url if project.screenshots.last)}
+        %img{src: (project.partner.logo_url(:small) if project.partner)}

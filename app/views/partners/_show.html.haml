@@ -1,0 +1,16 @@
+%ul.thumbnails
+  - partners.each do |partner|
+    %li.span4
+      .thumbnail
+        %a{href: partner_path(partner)}
+          %img.img-rounded{src: (partner.logo_url(:thumb))}
+        .content
+          %h3
+            = link_to partner.name, partner_path(partner)
+          %p
+            = partner.description
+          Site: 
+          = link_to partner.site, partner.site
+          %br
+          %a{href: partner_path(partner)}
+            View more

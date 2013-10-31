@@ -5,4 +5,9 @@ class PartnersController < ApplicationController
 
   def new
   end
+
+  def show
+    @partner = Partner.find(params[:id])
+  end
+
 end
