@@ -1,5 +1,8 @@
 HashtechRu::Application.routes.draw do
 
+  resources :partners, only: [:index, :show]
+  resources :projects, only: [:index, :show]
+
   root to: "welcome#index"
   
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -12,9 +15,6 @@ HashtechRu::Application.routes.draw do
     end
   end
 
-  resources :partners 
-  
-  resources :projects 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
