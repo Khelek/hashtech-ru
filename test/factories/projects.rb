@@ -5,7 +5,6 @@ FactoryGirl.define do
     name "MyString"
     description "MyText"
     partner_id 1
-    completed false
     site "MyString"
     repository "MyString"
   end
