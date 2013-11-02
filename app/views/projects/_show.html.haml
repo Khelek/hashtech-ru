@@ -1,0 +1,19 @@
+%ul.thumbnails
+  - projects.each do |project|
+    %li.span4
+      .thumbnail
+        %a{href: project_path(project)}
+          %img.img-rounded{src: (project.screenshots.first.image_url(:thumb) if project.screenshots.first)}
+        .content
+          %h3
+            = link_to project.name, project_path(project)
+          %p
+            = project.description
+          Site: 
+          = link_to project.site, project.site
+          %br
+          Repo: 
+          = link_to project.repository, project.repository
+          %br
+          %a{href: project_path(project)}
+            View more

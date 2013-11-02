@@ -132,7 +132,7 @@ GEM
     jquery-ui-rails (4.0.4)
       jquery-rails
       railties (>= 3.1.0)
-    json (1.8.0)
+    json (1.8.1)
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -159,7 +159,7 @@ GEM
     minitest (4.3.3)
     mocha (0.14.0)
       metaclass (~> 0.0.1)
-    multi_json (1.7.9)
+    multi_json (1.8.2)
     nested_form (0.3.2)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)

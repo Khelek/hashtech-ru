@@ -1,0 +1,16 @@
+.page-header
+  %h1= @partner.name
+.row-fluid
+  .span12
+    %img.img-rounded{src: (@partner.logo_url(:thumb))}
+    %p{ align: "justify" }
+      = @partner.description
+    Site: 
+    = link_to @partner.site, @partner.site
+    %h3= t('projects')
+    = render partial: "projects/show", locals: {projects: @partner.projects}
+    %p
+      = link_to t('back'), partners_path, class: 'btn'
+
+= javascript_include_tag  "fotorama_dep"
+= stylesheet_link_tag  "fotorama_dep"
